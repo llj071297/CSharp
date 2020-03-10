@@ -15,8 +15,10 @@ namespace SingleLinkedListDamo
             HeroNode hero2 = new HeroNode(2, "猪八戒");
             HeroNode hero3 = new HeroNode(3, "沙和尚");
             singleLinkedList.AddLinkedList(hero1);
-            singleLinkedList.AddLinkedList(hero3);
             singleLinkedList.AddLinkedList(hero2);
+            singleLinkedList.AddLinkedList(hero3);
+            singleLinkedList.ListLinkedList();
+            singleLinkedList.UpdateLinkedList(4, "唐僧");
             singleLinkedList.ListLinkedList();
             Console.ReadKey();
         }
@@ -26,7 +28,7 @@ namespace SingleLinkedListDamo
         private HeroNode head = new HeroNode(0, "");
 
         /// <summary>
-        /// 添加链表
+        /// 添加单链表
         /// </summary>
         /// <param name="heroNode"></param>
         public void AddLinkedList(HeroNode heroNode)
@@ -36,13 +38,21 @@ namespace SingleLinkedListDamo
             {
                 if (temp.Next == null)
                     break;
-                temp = temp.Next;             
+                temp = temp.Next;
             }
             temp.Next = heroNode;
         }
 
         /// <summary>
-        /// 遍历链表
+        /// 排序插入单链表
+        /// </summary>
+        public void AddOrderByLinkedList() 
+        {
+        
+        }
+
+        /// <summary>
+        /// 遍历单链表
         /// </summary>
         /// <param name="heroNode"></param>
         public void ListLinkedList()
@@ -53,8 +63,36 @@ namespace SingleLinkedListDamo
                 if (temp.Next == null)
                     break;
                 temp = temp.Next;
+                Console.WriteLine(temp.Name);
             }
-          
+        }
+
+        /// <summary>
+        /// 修改单链表
+        /// </summary>
+        public void UpdateLinkedList(int no, string name)
+        {
+            var temp = head;
+            bool isUpdata = false;
+            while (true)
+            {
+                if (temp.Next == null)
+                    break;
+                temp = temp.Next;
+                if (temp.No == no)
+                {
+                    var usedName = temp.Name;
+                    temp.Name = name;
+                    isUpdata = true;
+                    Console.WriteLine("修改成功！修改前：" + usedName + ",修改后：" + temp.Name);                  
+                    break;
+                }
+            }
+            if (isUpdata==false) 
+            {
+                Console.WriteLine("修改失败，查询不到需要修改的数据！");
+            }
+
         }
     }
 

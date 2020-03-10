@@ -4,3 +4,9 @@ C:\Users\llj\source\repos\DataStructure\SingleLinkedList\bin\Debug\SingleLinkedL
 C:\Users\llj\source\repos\DataStructure\SingleLinkedList\obj\Debug\SingleLinkedListDamo.csprojAssemblyReference.cache
 C:\Users\llj\source\repos\DataStructure\SingleLinkedList\obj\Debug\SingleLinkedList.exe
 C:\Users\llj\source\repos\DataStructure\SingleLinkedList\obj\Debug\SingleLinkedList.pdb
+F:\git库\CSharp\DataStructure\SingleLinkedList\bin\Debug\SingleLinkedList.exe.config
+F:\git库\CSharp\DataStructure\SingleLinkedList\bin\Debug\SingleLinkedList.exe
+F:\git库\CSharp\DataStructure\SingleLinkedList\bin\Debug\SingleLinkedList.pdb
+F:\git库\CSharp\DataStructure\SingleLinkedList\obj\Debug\SingleLinkedListDamo.csprojAssemblyReference.cache
+F:\git库\CSharp\DataStructure\SingleLinkedList\obj\Debug\SingleLinkedList.exe
+F:\git库\CSharp\DataStructure\SingleLinkedList\obj\Debug\SingleLinkedList.pdb
