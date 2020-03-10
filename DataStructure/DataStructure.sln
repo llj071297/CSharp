@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RingQueue", "RingQueue\RingQueue.csproj", "{CF4E4FB9-A364-4BFE-B7A1-5F8FA85F2688}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingleLinkedListDamo", "SingleLinkedList\SingleLinkedListDamo.csproj", "{E2E40180-9A1A-43C6-B819-B48292A93A13}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF4E4FB9-A364-4BFE-B7A1-5F8FA85F2688}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF4E4FB9-A364-4BFE-B7A1-5F8FA85F2688}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF4E4FB9-A364-4BFE-B7A1-5F8FA85F2688}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF4E4FB9-A364-4BFE-B7A1-5F8FA85F2688}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2E40180-9A1A-43C6-B819-B48292A93A13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2E40180-9A1A-43C6-B819-B48292A93A13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2E40180-9A1A-43C6-B819-B48292A93A13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2E40180-9A1A-43C6-B819-B48292A93A13}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E9F30322-D566-4526-BB89-EB23E38C2F40}
+	EndGlobalSection
+EndGlobal

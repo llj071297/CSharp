@@ -1,0 +1,6 @@
+C:\Users\llj\source\repos\DataStructure\RingQueue\obj\Debug\RingQueue.csprojAssemblyReference.cache
+C:\Users\llj\source\repos\DataStructure\RingQueue\bin\Debug\RingQueue.exe.config
+C:\Users\llj\source\repos\DataStructure\RingQueue\bin\Debug\RingQueue.exe
+C:\Users\llj\source\repos\DataStructure\RingQueue\bin\Debug\RingQueue.pdb
+C:\Users\llj\source\repos\DataStructure\RingQueue\obj\Debug\RingQueue.exe
+C:\Users\llj\source\repos\DataStructure\RingQueue\obj\Debug\RingQueue.pdb
