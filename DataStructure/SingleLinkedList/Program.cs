@@ -15,14 +15,13 @@ namespace SingleLinkedListDamo
             HeroNode hero2 = new HeroNode(2, "猪八戒");
             HeroNode hero3 = new HeroNode(3, "沙和尚");
             HeroNode hero4 = new HeroNode(4, "唐僧");
-            //singleLinkedList.AddLinkedList(hero1);
-            //singleLinkedList.AddLinkedList(hero2);
-            //singleLinkedList.AddLinkedList(hero3);
-            singleLinkedList.AddOrderByLinkedList(hero3);
-            singleLinkedList.AddOrderByLinkedList(hero2);
-            singleLinkedList.AddOrderByLinkedList(hero1);
-
-            singleLinkedList.AddOrderByLinkedList(hero4);
+            singleLinkedList.AddLinkedList(hero1);
+            singleLinkedList.AddLinkedList(hero2);
+            singleLinkedList.AddLinkedList(hero3);
+            //singleLinkedList.AddOrderByLinkedList(hero1);
+            //singleLinkedList.AddOrderByLinkedList(hero3);
+            //singleLinkedList.AddOrderByLinkedList(hero2);
+            //singleLinkedList.AddOrderByLinkedList(hero4);
 
             singleLinkedList.ListLinkedList();
             //singleLinkedList.UpdateLinkedList(4, "唐僧");
@@ -53,23 +52,25 @@ namespace SingleLinkedListDamo
         /// <summary>
         /// 排序插入单链表
         /// </summary>
-        public void AddOrderByLinkedList(HeroNode heroNode) 
-        {
-            var temp = head;
-            while (true)
-            {
-                if (temp.Next == null)
-                    break;
-                temp = temp.Next;
-                if (temp.No< heroNode.No && heroNode.No < temp?.Next?.No) 
-                {
-                   var temp1= temp.Next;
-                    heroNode.Next = temp1;
-                    break;
-                }
-            }
-            temp.Next = heroNode;
-        }
+        //public void AddOrderByLinkedList(HeroNode heroNode) 
+        //{
+        //    var temp = head;
+        //    while (true)
+        //    {
+        //        if (temp.Next == null)
+        //            break;
+        //        temp = temp.Next;
+        //        if (temp.No < heroNode.No)
+        //        {
+
+        //            temp.Next = heroNode;
+        //            break;
+        //        }
+        //    }
+        //    temp.Next = heroNode;
+        //}
+
+
 
         /// <summary>
         /// 遍历单链表
