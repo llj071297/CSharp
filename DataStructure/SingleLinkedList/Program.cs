@@ -15,17 +15,16 @@ namespace SingleLinkedListDamo
             HeroNode hero2 = new HeroNode(2, "猪八戒");
             HeroNode hero3 = new HeroNode(3, "沙和尚");
             HeroNode hero4 = new HeroNode(4, "唐僧");
-            singleLinkedList.AddLinkedList(hero1);
-            singleLinkedList.AddLinkedList(hero2);
-            singleLinkedList.AddLinkedList(hero3);
-            //singleLinkedList.AddOrderByLinkedList(hero1);
-            //singleLinkedList.AddOrderByLinkedList(hero3);
-            //singleLinkedList.AddOrderByLinkedList(hero2);
-            //singleLinkedList.AddOrderByLinkedList(hero4);
-
+            //singleLinkedList.AddLinkedList(hero1);
+            //singleLinkedList.AddLinkedList(hero2);
+            //singleLinkedList.AddLinkedList(hero3);
+            singleLinkedList.AddOrderByLinkedList(hero1);
+            singleLinkedList.AddOrderByLinkedList(hero3);
+            singleLinkedList.AddOrderByLinkedList(hero2);
+            singleLinkedList.AddOrderByLinkedList(hero4);
+            // singleLinkedList.UpdateLinkedList(4, "唐僧1");
+            //singleLinkedList.deleteLinkedList(1);
             singleLinkedList.ListLinkedList();
-            //singleLinkedList.UpdateLinkedList(4, "唐僧");
-            //singleLinkedList.ListLinkedList();
             Console.ReadKey();
         }
     }
@@ -52,23 +51,32 @@ namespace SingleLinkedListDamo
         /// <summary>
         /// 排序插入单链表
         /// </summary>
-        //public void AddOrderByLinkedList(HeroNode heroNode) 
-        //{
-        //    var temp = head;
-        //    while (true)
-        //    {
-        //        if (temp.Next == null)
-        //            break;
-        //        temp = temp.Next;
-        //        if (temp.No < heroNode.No)
-        //        {
+        /// <param name="heroNode"></param>
+        public void AddOrderByLinkedList(HeroNode heroNode)
+        {
+            var temp = head;
+            bool falg = false;
+            while (true)
+            {
+                if (temp.Next == null)
+                    break;
+                if (temp.Next.No > heroNode.No)
+                    break;
+                else if (temp.Next.No == heroNode.No)
+                {
+                    falg = true;
+                    break;
+                }
+                temp = temp.Next;  //如果没有满足这三个条件继续下去找
+            }
+            if (falg == true)
+                Console.WriteLine("已经有存在的");
 
-        //            temp.Next = heroNode;
-        //            break;
-        //        }
-        //    }
-        //    temp.Next = heroNode;
-        //}
+            heroNode.Next = temp.Next;
+            temp.Next = heroNode;
+
+
+        }
 
 
 
@@ -79,13 +87,17 @@ namespace SingleLinkedListDamo
         public void ListLinkedList()
         {
             var temp = head;
+            int number = 0;
             while (true)
             {
                 if (temp.Next == null)
                     break;
+                ++number;
                 temp = temp.Next;
-                Console.WriteLine(temp.Name);
+                Console.WriteLine($"编号：{temp.No} ,姓名：{temp.Name}");
             }
+            if (number == 0)
+                Console.WriteLine("单链表为空");
         }
 
         /// <summary>
@@ -101,19 +113,45 @@ namespace SingleLinkedListDamo
                     break;
                 temp = temp.Next;
                 if (temp.No == no)
-                { 
+                {
                     var usedName = temp.Name;
                     temp.Name = name;
                     isUpdata = true;
-                    Console.WriteLine("修改成功！修改前：" + usedName + ",修改后：" + temp.Name);                  
+                    Console.WriteLine("修改成功！修改前：" + usedName + ",修改后：" + temp.Name);
                     break;
                 }
+
             }
-            if (isUpdata==false) 
+            if (isUpdata == false)
             {
                 Console.WriteLine("修改失败，查询不到需要修改的数据！");
             }
 
+        }
+
+        /// <summary>
+        /// 删除单链表
+        /// </summary>
+        /// <param name="no"></param>
+        public void deleteLinkedList(int no)
+        {
+            var temp = head;
+            var felg = false;
+            while (true)
+            {
+                if (temp.Next == null)
+                    break;
+                if (temp.Next.No == no) //查找需要删除的节点
+                {
+                    felg = true;
+                    break;
+                }
+                temp = temp.Next;
+            }
+            if (felg)
+            {
+                temp.Next = temp.Next.Next; // 把删除的节点下一个赋值给删除节点上一个
+            }
         }
     }
 
