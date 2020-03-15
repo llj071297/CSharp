@@ -16,7 +16,7 @@ namespace SingleLinkedListDamo
             HeroNode hero3 = new HeroNode(3, "沙和尚");
             HeroNode hero4 = new HeroNode(4, "唐僧");
             //singleLinkedList.AddLinkedList(hero1);
-            //singleLinkedList.AddLinkedList(hero2);
+            //singleLinkedList.AddLinkedList(herop2);
             //singleLinkedList.AddLinkedList(hero3);
             singleLinkedList.AddOrderByLinkedList(hero1);
             singleLinkedList.AddOrderByLinkedList(hero3);
@@ -25,6 +25,10 @@ namespace SingleLinkedListDamo
             // singleLinkedList.UpdateLinkedList(4, "唐僧1");
             //singleLinkedList.deleteLinkedList(1);
             singleLinkedList.ListLinkedList();
+            var heroNode = singleLinkedList.FindLastIndexNode(1);
+            Console.WriteLine(heroNode?.Name);
+            int count = singleLinkedList.GetLinkedListCount();
+            Console.WriteLine(count);
             Console.ReadKey();
         }
     }
@@ -47,6 +51,52 @@ namespace SingleLinkedListDamo
             }
             temp.Next = heroNode;
         }
+
+
+        /// <summary>
+        /// 获取单链表的有效个数
+        /// </summary>
+        public int GetLinkedListCount()
+        {
+            var temp = head;
+            int Count = 0;
+            if (temp.Next == null)
+                return Count;
+            while (true)
+            {
+                if (temp.Next == null)
+                    break;
+                ++Count;
+                temp = temp.Next;
+            }
+            return Count;
+
+        }
+
+        /// <summary>
+        /// 获取倒数第几个
+        /// 1、index表示是倒数第index个节点
+        /// 2、先把链表从头到尾遍历，得到链表的总的长度
+        /// 3、得到size后，我们从链表的第一个开始遍历(size-index)个，就可以得到
+        /// </summary>
+        /// <returns></returns>
+        public HeroNode FindLastIndexNode(int index)
+        {
+            HeroNode temp = head;
+            if (temp.Next == null)
+                return null;
+            int size = GetLinkedListCount(); //得到链表的总长度
+            if (index <= 0 || index > size) //对index做个验证
+            {
+                return null;
+            }
+            for (int i = 0; i < size - index; i++)
+            {
+                temp = temp.Next;
+            }
+            return temp.Next;
+        }
+
 
         /// <summary>
         /// 排序插入单链表
