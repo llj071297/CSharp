@@ -10,6 +10,11 @@ namespace 匿名类型
     {
         static void Main(string[] args)
         {
+            if (0>0) 
+            {
+                Console.WriteLine("DSA");
+            }
+
             var data = new { name = "asd", age = 238 }; //这个就是匿名类型
             var data1 = new { name = "asd", age = 321, das = 132};
         }

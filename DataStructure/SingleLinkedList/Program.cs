@@ -36,6 +36,13 @@ namespace SingleLinkedListDamo
     {
         private HeroNode head = new HeroNode(0, "");
 
+        public void ReverSetList(HeroNode heroNode)
+        {
+         //
+        }
+
+
+
         /// <summary>
         /// 添加单链表
         /// </summary>
