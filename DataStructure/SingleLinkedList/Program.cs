@@ -25,10 +25,14 @@ namespace SingleLinkedListDamo
             // singleLinkedList.UpdateLinkedList(4, "唐僧1");
             //singleLinkedList.deleteLinkedList(1);
             singleLinkedList.ListLinkedList();
-            var heroNode = singleLinkedList.FindLastIndexNode(1);
-            Console.WriteLine(heroNode?.Name);
-            int count = singleLinkedList.GetLinkedListCount();
-            Console.WriteLine(count);
+
+            singleLinkedList.ReverSetList();
+            singleLinkedList.ListLinkedList();
+            //var heroNode = singleLinkedList.FindLastIndexNode(1);
+            //Console.WriteLine(heroNode?.Name);
+            //int count = singleLinkedList.GetLinkedListCount();
+
+            //Console.WriteLine(count);
             Console.ReadKey();
         }
     }
@@ -36,9 +40,26 @@ namespace SingleLinkedListDamo
     {
         private HeroNode head = new HeroNode(0, "");
 
-        public void ReverSetList(HeroNode heroNode)
+        /// <summary>
+        /// 利用头插法来实现链表反转
+        /// </summary>
+        /// <param name="heroNode"></param>
+        public void ReverSetList()
         {
-         //
+            var temp = head.Next;
+            if (temp.Next == null || temp.Next.Next == null)  //判断单列表是否等于空 or 单列表是否只有一个,无需反转
+                return;
+            var reverSeHead = new HeroNode(0, "");//定义一个接收的容器
+            while (true)
+            {
+                var next = temp.Next; //定义记录当前节点下一个节点
+                temp.Next = reverSeHead.Next;
+                reverSeHead.Next = temp;
+                temp = next;
+                if (next == null)
+                    break;
+            }
+            head.Next = reverSeHead.Next;
         }
 
 
